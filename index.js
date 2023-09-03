@@ -7,7 +7,7 @@ let url = `https://jsonplaceholder.typicode.com/posts?_limit=12&_page=${page}`;
 fetchPosts(url, renderPosts);
 
 // Scroll Listener
-document.addEventListener("scroll", () => {
+window.addEventListener("scroll", () => {
   const clientHeight = card_container.clientHeight;
   const windowInnerHeight = window.innerHeight;
   const scrollTop = document.documentElement.scrollTop;
