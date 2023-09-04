@@ -24,15 +24,22 @@ window.addEventListener("scroll", () => {
 function renderPosts(posts) {
   posts.forEach((post) => {
     const postCard = document.createElement("div");
-    postCard.innerHTML = `<div class="card">
-    <h1>${post.id}</h1>
-    <h2>
-      ${post.title}
-    </h2>
-    <p>
-    ${post.body}
-    </p>
-  </div>`;
+    const postCardId = document.createElement("h1");
+    const postCardTitle = document.createElement("h2");
+    const postCardBody = document.createElement("p");
+
+    // Setting Attribute
+    postCard.setAttribute("class", "card");
+
+    // Appending Card Childs with Content
+    postCardId.textContent = post.id;
+    postCard.appendChild(postCardId);
+    postCardTitle.textContent = post.title;
+    postCard.appendChild(postCardTitle);
+    postCardBody.textContent = post.body;
+    postCard.appendChild(postCardBody);
+
+    // Appending Post Card
     card_container.appendChild(postCard);
   });
 }
